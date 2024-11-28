@@ -8,8 +8,8 @@ def read_json():
     with open('config.json', encoding='utf-8') as file:
         data = json.load(file)
     return data
-def csv():
-    csv = pd.read_csv('input.csv')
+def csv(json):
+    csv = pd.read_csv(json['csvFilePath'])
     return csv
 def document(df, json):
 #
@@ -126,14 +126,14 @@ def document(df, json):
                                ' ' + '______________(подпись)')
 
 
-    doc.SaveToFile("output/CreateTable.docx", FileFormat.Docx2013)
+    doc.SaveToFile("output/Протокол обучения пользователей №1.docx", FileFormat.Docx2013)
 
     doc.Close()
 
 
 if __name__ == "__main__":
-    df = csv()
     json = read_json()
+    df = csv(json)
     document(df=df, json=json)
 
 

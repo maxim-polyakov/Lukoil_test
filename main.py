@@ -92,21 +92,18 @@ def document(df, json):
         paragraph.Format.HorizontalAlignment = HorizontalAlignment.Center
         paragraph.AppendText(str(i - 1))
 
-    for i in range(2, n + 2):
         cell = table.Rows[i].Cells[1]
         cell.CellFormat.VerticalAlignment = VerticalAlignment.Middle
         paragraph = cell.AddParagraph()
         paragraph.Format.HorizontalAlignment = HorizontalAlignment.Center
         paragraph.AppendText(str(df['Фамилия'][i - 2]))
 
-    for i in range(2, n + 2):
         cell = table.Rows[i].Cells[2]
         cell.CellFormat.VerticalAlignment = VerticalAlignment.Middle
         paragraph = cell.AddParagraph()
         paragraph.Format.HorizontalAlignment = HorizontalAlignment.Center
         paragraph.AppendText(str(df['Имя'][i - 2]))
 
-    for i in range(2, n + 2):
         cell = table.Rows[i].Cells[3]
         cell.CellFormat.VerticalAlignment = VerticalAlignment.Middle
         paragraph = cell.AddParagraph()
